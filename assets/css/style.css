@@ -295,3 +295,52 @@ a{
   font-weight: 600;
   margin: 20px auto;
 }
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card{
+  display: flex;
+  width: 70%;
+  margin: 10px auto;
+}
+
+.card img{width: 100px; }
+
+.card .card-txt{ 
+  width: 60%; 
+  padding: 0 0 0 20px;
+}
+
+
+.card form{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: none;
+  text-align: center;
+} 
+
+.card form input{ padding: 3px 0; }
+
+ input[type=submit] {
+  background-color: #4CAF50;
+  border: none;
+  font-size: 12px;
+  border-radius: 3px;
+  color: white;
+  text-decoration: none;
+  margin: 3px 2px;
+  cursor: pointer;
+}
+
+.card  input[type=submit] { width: 80px; }
+header  input[type=submit] { 
+  width: 60px; 
+  transform: translateX(300px);
+  font-size: 14px;
+  padding: 8px;
+}

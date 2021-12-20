@@ -1,14 +1,24 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['userId'])){
+        ?>
+          <script type="text/javascript">location.href = 'index.php';</script>
+        <?php
+    }
+    if(!isset($_SESSION['editUser'])){
+        ?>
+          <script type="text/javascript">location.href = 'portfolio.php';</script>
+        <?php
+    }
+    require 'assets/php/database.php';
+    require 'assets/php/validate.php';
+?>
 <!doctype html>
 <!-- If multi-language site, reconsider usage of html lang declaration here. -->
 <html lang="en">
-<?php
-  session_start();
-  require 'assets/php/database.php';
-  require 'assets/php/validate.php';
-?>
 <head>
   <meta charset="utf-8">
-  <title>Login</title>
+  <title>Edit</title>
   <!-- View-port Basics: http://mzl.la/VYREaP -->
   <!-- This meta tag is used for mobile device to display the page without any zooming,
        so how much the device is able to fit on the screen is what's shown initially. 
@@ -28,33 +38,15 @@
   <div class="container">
     <!--header section start-->
     <header>
-      <p>Login</p>
+      <p>Edit</p>
     </header>
     <!--header section start-->
     <!--main section start-->
     <main>
       <div class="wrapper">
-        <form method="post" action="index.php" enctype="multipart/form-data">
-          <div class="form-group">
-            <label for="mail">E-mail:</label>
-            <input type="text" id="mail" name="mail" value="<?php echo $mail;?>">
-            <span class="error hide-me mail-err">
-              <?php echo $mailErr ?>
-            </span>
-          </div>
-          <div class="form-group">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" value="<?php echo $pass;?>">
-            <span class="error hide-me password-err"><?php echo $logpass_err; ?></span>
-          </div>
-          <div class="form-controls">
-            <input type="submit" id="submit-btn" name="submit" value="submit">
-            <input type="submit" id="clear-btn" value="clear" name="clear">
-          </div>
-        </form>
-      <div style="text-align: center;">
-        <a href="register.php" title="Register Now">Register Now</a>
-      </div>
+        <?php 
+            require 'assets/php/form.php';
+        ?>
       </div>
     </main>
     <!--main section end-->
